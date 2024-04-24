@@ -1,4 +1,5 @@
-Overview
+_Overview_
+
 This project aims to develop a program that utilizes two NASA APIs, namely NASA Asteroids - NeoWs and NASA Exoplanet, to explore and categorize celestial objects based on their characteristics. The program will focus on classifying exoplanets using data from the NASA Exoplanet API and fetching information about Near Earth Objects (NEOs) from the NASA Asteroids - NeoWs API.
 Project relevance
 
@@ -11,7 +12,7 @@ Exploring space, categorizing NEOs, and studying exoplanets based on their chara
 By analyzing data from NASA APIs, we can better understand the cosmos and potentially discover planets with conditions conducive to supporting life.
 
 
-Implementation:
+_Implementation:_
 1)	Visualization:
 •	Utilize Qt widgets to create an intuitive interface for users to interact with the program.
 •	Implement visualizations such as scatter plots or bar charts to illustrate clusters of exoplanets based on their attributes.
@@ -29,13 +30,13 @@ Implementation:
 •	Discuss any challenges encountered during development and the strategies employed to overcome them.
 •	Present insights or findings from the clustered exoplanet data, discussing potential real-world applications or avenues for further enhancement.
 
-Requirements
+_Requirements_
 1)	C++ compiler
 2)	QT for developing an application
 3)	СURL library for making API requests
 4)	JSON library for parsing API response
 
-References
+_References_
 NASA Exoplanet Archive API
 NASA NeoWs API documentation: https://api.nasa.gov/api.html#neows-lookup
 NASA Near Earth Object Program: https://cneos.jpl.nasa.gov/
