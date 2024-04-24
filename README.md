@@ -15,19 +15,27 @@ By analyzing data from NASA APIs, we can better understand the cosmos and potent
 _Implementation:_
 1)	Visualization:
 •	Utilize Qt widgets to create an intuitive interface for users to interact with the program.
+
 •	Implement visualizations such as scatter plots or bar charts to illustrate clusters of exoplanets based on their attributes.
-2)	Data Fetching from NASA Exoplanet API:
+3)	Data Fetching from NASA Exoplanet API:
 •	Develop a C++ program using Qt's networking classes to fetch data from the NASA Exoplanet API.
+
 •	Set up HTTP requests to retrieve JSON data containing information about exoplanets.
+
 •	Parse JSON responses to extract relevant details like exoplanet names, distances, diameters, etc.
-3)	Clustering Algorithm Implementation:
+4)	Clustering Algorithm Implementation:
 •	Implement a clustering algorithm, such as k-means, in C++ to categorize exoplanet data into clusters based on their attributes.
+
 •	Define appropriate distance metrics for clustering, considering factors like distance, diameter, and other parameters.
+
 •	Optimize the algorithm for efficiency and scalability to handle potentially large datasets of exoplanets.
-4)	Project Presentation:
+5)	Project Presentation:
 •	Showcase the functionalities of the Qt interface, demonstrating how users can interact with and visualize exoplanet data.
+
 •	Explain the implementation details of data fetching from the NASA Exoplanet API and the clustering algorithm used.
+
 •	Discuss any challenges encountered during development and the strategies employed to overcome them.
+
 •	Present insights or findings from the clustered exoplanet data, discussing potential real-world applications or avenues for further enhancement.
 
 _Requirements_
