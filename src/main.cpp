@@ -4,7 +4,7 @@
 #include <vector>
 #include <cmath>
 #include <cstdlib>
-#include <json/json.h>  // Подключение библиотеки для работы с JSON
+#include <json/json.h>
 
 size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
     ((std::string *) userp)->append((char *) contents, size * nmemb);
@@ -82,13 +82,11 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
     std::vector<NEO> centroids(k);
     std::vector<int> labels(n);
 
-    // Randomly initialize centroids
     for (int i = 0; i < k; ++i) {
         centroids[i] = neos[rand() % n];
     }
 
     for (int iter = 0; iter < iterations; ++iter) {
-        // Assign points to the nearest centroid
         for (int i = 0; i < n; ++i) {
             double min_dist = euclidean_distance(neos[i], centroids[0]);
             int label = 0;
@@ -101,7 +99,6 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
             }
             labels[i] = label;
         }
-        // Update centroids
         std::vector<NEO> new_centroids(k, {0, 0, 0});
         std::vector<int> counts(k, 0);
         for (int i = 0; i < n; ++i) {
@@ -121,7 +118,6 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
         centroids = new_centroids;
     }
 
-    // Print the clusters
     for (int i = 0; i < k; ++i) {
         std::cout << "Cluster " << i + 1 << ":" << std::endl;
         for (int j = 0; j < n; ++j) {
@@ -139,8 +135,8 @@ int main() {
     std::vector<NEO> neos = fetch_neo_data(api_key);
 
     if (!neos.empty()) {
-        int k = 5; // Number of clusters
-        int iterations = 100; // Number of iterations for K-means
+        int k = 5;
+        int iterations = 100;
         k_means_clustering(neos, k, iterations);
     } else {
         std::cerr << "No NEO data available" << std::endl;
