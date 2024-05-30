@@ -12,9 +12,11 @@ size_t WriteCallback(void *contents, size_t size, size_t nmemb, void *userp) {
 }
 
 struct NEO {
+    std::string name;
     double diameter;
     double distance;
     double speed;
+    double absolute_magnitude;
 };
 
 std::vector<NEO> fetch_neo_data(const std::string &api_key) {
@@ -49,16 +51,20 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
         for (const auto &date: root["near_earth_objects"].getMemberNames()) {
             for (const auto &neo: root["near_earth_objects"][date]) {
                 try {
-                    if (neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"].isDouble() &&
+                    if (neo["name"].isString() &&
+                        neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"].isDouble() &&
                         neo["close_approach_data"][0]["miss_distance"]["kilometers"].isString() &&
-                        neo["close_approach_data"][0]["relative_velocity"]["kilometers_per_second"].isString()) {
+                        neo["close_approach_data"][0]["relative_velocity"]["kilometers_per_second"].isString() &&
+                        neo["absolute_magnitude_h"].isDouble()) {
 
+                        std::string name = neo["name"].asString();
                         double diameter = neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"].asDouble();
                         double distance = std::stod(
                                 neo["close_approach_data"][0]["miss_distance"]["kilometers"].asString());
                         double speed = std::stod(
                                 neo["close_approach_data"][0]["relative_velocity"]["kilometers_per_second"].asString());
-                        neos.push_back({diameter, distance, speed});
+                        double absolute_magnitude = neo["absolute_magnitude_h"].asDouble();
+                        neos.push_back({name, diameter, distance, speed, absolute_magnitude});
                     } else {
                         std::cerr << "Invalid data types in NEO entry." << std::endl;
                     }
@@ -99,7 +105,7 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
             }
             labels[i] = label;
         }
-        std::vector<NEO> new_centroids(k, {0, 0, 0});
+        std::vector<NEO> new_centroids(k, {"", 0, 0, 0, 0});
         std::vector<int> counts(k, 0);
         for (int i = 0; i < n; ++i) {
             int label = labels[i];
@@ -122,9 +128,11 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
         std::cout << "Cluster " << i + 1 << ":" << std::endl;
         for (int j = 0; j < n; ++j) {
             if (labels[j] == i) {
-                std::cout << "  NEO(diameter: " << neos[j].diameter
+                std::cout << "  NEO(name: " << neos[j].name
+                          << ", diameter: " << neos[j].diameter
                           << ", distance: " << neos[j].distance
-                          << ", speed: " << neos[j].speed << ")" << std::endl;
+                          << ", speed: " << neos[j].speed
+                          << ", absolute magnitude: " << neos[j].absolute_magnitude << ")" << std::endl;
             }
         }
     }
@@ -136,7 +144,7 @@ int main() {
 
     if (!neos.empty()) {
         int k = 5;
-        int iterations = 100;
+        int iterations = 200;
         k_means_clustering(neos, k, iterations);
     } else {
         std::cerr << "No NEO data available" << std::endl;
