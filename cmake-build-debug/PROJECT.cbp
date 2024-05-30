@@ -81,6 +81,12 @@
 		<Unit filename="/Users/anastasiasmirnova/Documents/GitHub/PROJECT/src/main.cpp">
 			<Option target="PROJECT"/>
 		</Unit>
+		<Unit filename="/Users/anastasiasmirnova/Documents/GitHub/PROJECT/src/neo.cpp">
+			<Option target="PROJECT"/>
+		</Unit>
+		<Unit filename="/Users/anastasiasmirnova/Documents/GitHub/PROJECT/src/neo.h">
+			<Option target="PROJECT"/>
+		</Unit>
 		<Unit filename="/Users/anastasiasmirnova/Documents/GitHub/PROJECT/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

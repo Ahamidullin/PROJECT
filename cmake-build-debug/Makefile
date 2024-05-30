@@ -153,6 +153,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/neo.o: src/neo.cpp.o
+.PHONY : src/neo.o
+
+# target to build an object file
+src/neo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.o
+.PHONY : src/neo.cpp.o
+
+src/neo.i: src/neo.cpp.i
+.PHONY : src/neo.i
+
+# target to preprocess a source file
+src/neo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.i
+.PHONY : src/neo.cpp.i
+
+src/neo.s: src/neo.cpp.s
+.PHONY : src/neo.s
+
+# target to generate assembly for a file
+src/neo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.s
+.PHONY : src/neo.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/neo.o"
+	@echo "... src/neo.i"
+	@echo "... src/neo.s"
 .PHONY : help
 
 

@@ -12,5 +12,6 @@ include_directories(${JSONCPP_INCLUDE_DIRS})
 link_directories(${CURL_LIBRARY_DIRS})
 link_directories(${JSONCPP_LIBRARY_DIRS})
 
-add_executable(PROJECT src/main.cpp)
+add_executable(PROJECT src/main.cpp
+        src/neo.cpp)
 target_link_libraries(PROJECT ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES})
