@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/amirhamidullin/Desktop/PROJECT_v2 -B /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/amirhamidullin/Desktop/PROJECT -B /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -9,5 +9,5 @@ CMake Deprecation Warning:
 
 
 -- Configuring done (0.1s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug

@@ -57,10 +57,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/amirhamidullin/Desktop/PROJECT_v2
+CMAKE_SOURCE_DIR = /Users/amirhamidullin/Desktop/PROJECT
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -142,9 +142,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug/CMakeFiles /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/CMakeFiles /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amirhamidullin/Desktop/PROJECT_v2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -172,17 +172,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named PROJECT_v2
+# Target rules for targets named PROJECT
 
 # Build rule for target.
-PROJECT_v2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PROJECT_v2
-.PHONY : PROJECT_v2
+PROJECT: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 PROJECT
+.PHONY : PROJECT
 
 # fast build rule for target.
-PROJECT_v2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/build
-.PHONY : PROJECT_v2/fast
+PROJECT/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/build
+.PHONY : PROJECT/fast
 
 #=============================================================================
 # Target rules for targets named gmock
@@ -241,7 +241,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -249,7 +249,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -257,7 +257,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 src/neo.o: src/neo.cpp.o
@@ -265,7 +265,7 @@ src/neo.o: src/neo.cpp.o
 
 # target to build an object file
 src/neo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/neo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.o
 .PHONY : src/neo.cpp.o
 
 src/neo.i: src/neo.cpp.i
@@ -273,7 +273,7 @@ src/neo.i: src/neo.cpp.i
 
 # target to preprocess a source file
 src/neo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/neo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.i
 .PHONY : src/neo.cpp.i
 
 src/neo.s: src/neo.cpp.s
@@ -281,7 +281,7 @@ src/neo.s: src/neo.cpp.s
 
 # target to generate assembly for a file
 src/neo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT_v2.dir/build.make CMakeFiles/PROJECT_v2.dir/src/neo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.s
 .PHONY : src/neo.cpp.s
 
 # Help Target
@@ -297,7 +297,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... PROJECT_v2"
+	@echo "... PROJECT"
 	@echo "... gmock"
 	@echo "... gmock_main"
 	@echo "... gtest"

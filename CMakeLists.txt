@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(PROJECT_v2)
+project(PROJECT)
 
 set(CMAKE_GENERATOR "Ninja")
 
@@ -16,7 +16,7 @@ include_directories(${CURL_INCLUDE_DIRS} ${JSONCPP_INCLUDE_DIRS})
 link_directories(${CURL_LIBRARY_DIRS} ${JSONCPP_LIBRARY_DIRS})
 
 # Создание исполняемого файла
-add_executable(PROJECT_v2 src/main.cpp src/neo.cpp)
+add_executable(PROJECT src/main.cpp src/neo.cpp)
 
 # Связывание библиотек с проектом
-target_link_libraries(PROJECT_v2 ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gtest_main)
+target_link_libraries(PROJECT ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gtest_main)
