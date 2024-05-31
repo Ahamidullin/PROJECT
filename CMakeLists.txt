@@ -3,8 +3,8 @@ project(PROJECT)
 
 set(CMAKE_CXX_STANDARD 11)
 
-# Подключение Google Test
-add_subdirectory(lib/googletest)  # Ensure the Google Test library is in this directory
+# Подключение Google Test и Google Mock
+add_subdirectory(lib/googletest)  # Убедитесь, что библиотека Google Test находится в этой директории
 enable_testing()
 
 # Поиск и подключение зависимостей
@@ -21,11 +21,11 @@ add_executable(PROJECT src/main.cpp src/neo.cpp)
 # Связывание библиотек с основным проектом
 target_link_libraries(PROJECT ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gtest_main)
 
-# Создание тестового исполняемого файла
+# Создание тестового исполняемого файла с использованием Google Mock
 add_executable(test_project test/test_neo.cpp)
 
 # Связывание библиотек с тестовым проектом
-target_link_libraries(test_project ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gtest_main)
+target_link_libraries(test_project ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gmock gtest_main gmock_main)
 
-# Добавление тестов1
+# Добавление тестов
 add_test(NAME test_project COMMAND test_project)
