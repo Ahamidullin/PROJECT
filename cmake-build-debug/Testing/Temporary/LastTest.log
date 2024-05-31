@@ -1,3 +1,28 @@
-Start testing: May 31 21:54 MSK
+Start testing: May 31 23:43 MSK
 ----------------------------------------------------------
-End testing: May 31 21:54 MSK
+1/1 Testing: test_project
+1/1 Test: test_project
+Command: "/Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug/test_project"
+Directory: /Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug
+"test_project" start time: May 31 23:43 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from SampleTest
+[ RUN      ] SampleTest.AssertionTrue
+[       OK ] SampleTest.AssertionTrue (0 ms)
+[----------] 1 test from SampleTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.91 sec
+----------------------------------------------------------
+Test Passed.
+"test_project" end time: May 31 23:43 MSK
+"test_project" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 31 23:43 MSK
