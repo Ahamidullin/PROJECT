@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/anastasiasmirnova/Documents/GitHub/PROJECT -B /Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug
+/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /Users/amirhamidullin/Desktop/PROJECT -B /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug
 CMake Deprecation Warning:
   Support for "Extra Generators" like
 
@@ -8,6 +8,22 @@ CMake Deprecation Warning:
   use the cmake-file-api(7) to view CMake-generated project build trees.
 
 
--- Configuring done (0.1s)
+-- The C compiler identification is AppleClang 15.0.0.15000100
+-- The CXX compiler identification is AppleClang 15.0.0.15000100
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /Library/Developer/CommandLineTools/usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /Library/Developer/CommandLineTools/usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found CURL: /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk/usr/lib/libcurl.tbd (found version "8.4.0")  
+-- Found PkgConfig: /opt/homebrew/bin/pkg-config (found version "0.29.2") 
+-- Checking for module 'jsoncpp'
+--   Found jsoncpp, version 1.9.4
+-- Configuring done (3.6s)
 -- Generating done (0.0s)
--- Build files have been written to: /Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug
+-- Build files have been written to: /Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug
