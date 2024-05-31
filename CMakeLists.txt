@@ -27,5 +27,5 @@ add_executable(test_project test/test_neo.cpp)
 # Связывание библиотек с тестовым проектом
 target_link_libraries(test_project ${CURL_LIBRARIES} ${JSONCPP_LIBRARIES} gtest gtest_main)
 
-# Добавление тестов
+# Добавление тестов1
 add_test(NAME test_project COMMAND test_project)
