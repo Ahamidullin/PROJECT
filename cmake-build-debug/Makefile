@@ -185,6 +185,19 @@ PROJECT/fast:
 .PHONY : PROJECT/fast
 
 #=============================================================================
+# Target rules for targets named test_project
+
+# Build rule for target.
+test_project: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_project
+.PHONY : test_project
+
+# fast build rule for target.
+test_project/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_project.dir/build.make CMakeFiles/test_project.dir/build
+.PHONY : test_project/fast
+
+#=============================================================================
 # Target rules for targets named gmock
 
 # Build rule for target.
@@ -284,6 +297,30 @@ src/neo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/PROJECT.dir/build.make CMakeFiles/PROJECT.dir/src/neo.cpp.s
 .PHONY : src/neo.cpp.s
 
+test/test_neo.o: test/test_neo.cpp.o
+.PHONY : test/test_neo.o
+
+# target to build an object file
+test/test_neo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_project.dir/build.make CMakeFiles/test_project.dir/test/test_neo.cpp.o
+.PHONY : test/test_neo.cpp.o
+
+test/test_neo.i: test/test_neo.cpp.i
+.PHONY : test/test_neo.i
+
+# target to preprocess a source file
+test/test_neo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_project.dir/build.make CMakeFiles/test_project.dir/test/test_neo.cpp.i
+.PHONY : test/test_neo.cpp.i
+
+test/test_neo.s: test/test_neo.cpp.s
+.PHONY : test/test_neo.s
+
+# target to generate assembly for a file
+test/test_neo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_project.dir/build.make CMakeFiles/test_project.dir/test/test_neo.cpp.s
+.PHONY : test/test_neo.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -302,12 +339,16 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... test_project"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/neo.o"
 	@echo "... src/neo.i"
 	@echo "... src/neo.s"
+	@echo "... test/test_neo.o"
+	@echo "... test/test_neo.i"
+	@echo "... test/test_neo.s"
 .PHONY : help
 
 

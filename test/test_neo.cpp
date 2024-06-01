@@ -1,8 +1,6 @@
 #include <gtest/gtest.h>
 #include "../src/neo.cpp"
 #include "../src/neo.h"
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include <curl/curl.h>
 #include <json/json.h>
 

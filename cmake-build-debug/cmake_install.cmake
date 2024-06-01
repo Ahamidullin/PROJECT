@@ -1,4 +1,4 @@
-# Install script for directory: /Users/anastasiasmirnova/Documents/GitHub/PROJECT
+# Install script for directory: /Users/amirhamidullin/Desktop/PROJECT
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/objdump")
+  set(CMAKE_OBJDUMP "/Library/Developer/CommandLineTools/usr/bin/objdump")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug/lib/googletest/cmake_install.cmake")
+  include("/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/lib/googletest/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

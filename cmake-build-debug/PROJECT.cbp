@@ -61,6 +61,54 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="test_project">
+				<Option output="/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/test_project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/opt/homebrew/Cellar/jsoncpp/1.9.5/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googletest/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googletest"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googlemock/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googlemock"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_project"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test_project/fast">
+				<Option output="/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/test_project" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/opt/homebrew/Cellar/jsoncpp/1.9.5/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googletest/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googletest"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googlemock/include"/>
+					<Add directory="/Users/amirhamidullin/Desktop/PROJECT/lib/googletest/googlemock"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 test_project/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="test">
 				<Option working_dir="/Users/amirhamidullin/Desktop/PROJECT/cmake-build-debug"/>
 				<Option type="4"/>
@@ -328,6 +376,9 @@
 		</Unit>
 		<Unit filename="/Users/amirhamidullin/Desktop/PROJECT/src/neo.h">
 			<Option target="PROJECT"/>
+		</Unit>
+		<Unit filename="/Users/amirhamidullin/Desktop/PROJECT/test/test_neo.cpp">
+			<Option target="test_project"/>
 		</Unit>
 		<Unit filename="/Users/amirhamidullin/Desktop/PROJECT/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
