@@ -1,3 +1,4 @@
+![NEO](https://github.com/Ahamidullin/PROJECT/blob/main/52404932634_b4508d3a34_o.jpg)
 ### Overview
 
 This project aims to develop a program that utilizes the NASA Asteroids - NeoWs API to explore and categorize Near Earth Objects (NEOs) based on their characteristics. The program focuses on fetching information about NEOs from the NASA Asteroids - NeoWs API and visualizing this data for analysis.
