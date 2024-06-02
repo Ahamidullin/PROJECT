@@ -55,7 +55,6 @@ By **analyzing data** from the NASA NeoWs API, we can better understand the cosm
 
 ## Visualization - Graphs
 
-![NEO](https://github.com/Ahamidullin/PROJECT/blob/main/cluster%20graphs/photo_2024-06-02%2023.23.52.jpeg)
 ![NEO](https://github.com/Ahamidullin/PROJECT/blob/main/cluster%20graphs/photo_2024-06-02%2023.23.55.jpeg)
 ![NEO](https://github.com/Ahamidullin/PROJECT/blob/main/cluster%20graphs/photo_2024-06-02%2023.23.58.jpeg)
 ![NEO](https://github.com/Ahamidullin/PROJECT/blob/main/cluster%20graphs/photo_2024-06-02%2023.24.01.jpeg)
