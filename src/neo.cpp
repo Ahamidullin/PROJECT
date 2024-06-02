@@ -66,7 +66,8 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
                         double miss_distance_astronomical = std::stod(
                                 neo["close_approach_data"][0]["miss_distance"]["astronomical"].asString());
 
-                        neos.push_back({name, diameter, distance, speed, absolute_magnitude, close_approach_date, orbiting_body, miss_distance_astronomical});
+                        neos.push_back({name, diameter, distance, speed, absolute_magnitude, close_approach_date,
+                                        orbiting_body, miss_distance_astronomical});
                     } else {
                         std::cerr << "Invalid data types in NEO entry." << std::endl;
                     }
