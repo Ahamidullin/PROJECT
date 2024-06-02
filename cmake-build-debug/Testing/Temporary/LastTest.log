@@ -1,3 +1,63 @@
-Start testing: May 30 22:24 MSK
+Start testing: Jun 02 15:53 MSK
 ----------------------------------------------------------
-End testing: May 30 22:24 MSK
+1/1 Testing: test_project
+1/1 Test: test_project
+Command: "/Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug/test_project"
+Directory: /Users/anastasiasmirnova/Documents/GitHub/PROJECT/cmake-build-debug
+"test_project" start time: Jun 02 15:53 MSK
+Output:
+----------------------------------------------------------
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from NasaApiTest
+[ RUN      ] NasaApiTest.FetchNeoDataParsesCorrectly
+Mock curl_easy_perform called
+Mock response assigned to writeBuffer
+Number of NEOs fetched: 1
+Fetched NEO: Mock NEO 1
+[       OK ] NasaApiTest.FetchNeoDataParsesCorrectly (5 ms)
+[ RUN      ] NasaApiTest.FetchNeoDataHandlesEmptyResponse
+Mock curl_easy_perform called
+Mock response assigned to writeBuffer
+Number of NEOs fetched: 0
+[       OK ] NasaApiTest.FetchNeoDataHandlesEmptyResponse (0 ms)
+[ RUN      ] NasaApiTest.FetchNeoDataHandlesInvalidResponse
+Mock curl_easy_perform called
+Mock response assigned to writeBuffer
+Invalid data types in NEO entry.
+Number of NEOs fetched: 0
+[       OK ] NasaApiTest.FetchNeoDataHandlesInvalidResponse (0 ms)
+[ RUN      ] NasaApiTest.EuclideanDistanceCalculatesCorrectly
+[       OK ] NasaApiTest.EuclideanDistanceCalculatesCorrectly (0 ms)
+[ RUN      ] NasaApiTest.EuclideanDistanceCalculatesCorrectlyWithSameData
+[       OK ] NasaApiTest.EuclideanDistanceCalculatesCorrectlyWithSameData (0 ms)
+[ RUN      ] NasaApiTest.KMeansClusteringDistributesDataCorrectly
+Cluster 1:
+  NEO(name: NEO 1, diameter: 0.1, distance: 100000, speed: 25, absolute magnitude: 22.1, close approach date: 2024-05-01, orbiting body: Earth, miss distance (AU): 0.00067)
+  NEO(name: NEO 3, diameter: 0.15, distance: 105000, speed: 27, absolute magnitude: 22, close approach date: 2024-05-03, orbiting body: Earth, miss distance (AU): 0.00069)
+  NEO(name: NEO 4, diameter: 0.05, distance: 90000, speed: 20, absolute magnitude: 23, close approach date: 2024-05-04, orbiting body: Earth, miss distance (AU): 0.00066)
+Cluster 2:
+  NEO(name: NEO 2, diameter: 0.2, distance: 110000, speed: 30, absolute magnitude: 21.5, close approach date: 2024-05-02, orbiting body: Earth, miss distance (AU): 0.00068)
+  NEO(name: NEO 5, diameter: 0.25, distance: 115000, speed: 35, absolute magnitude: 21, close approach date: 2024-05-05, orbiting body: Earth, miss distance (AU): 0.0007)
+[       OK ] NasaApiTest.KMeansClusteringDistributesDataCorrectly (0 ms)
+[ RUN      ] NasaApiTest.KMeansClusteringGroupsCorrectly
+Cluster 1:
+  NEO(name: NEO 1, diameter: 0.1, distance: 100000, speed: 25, absolute magnitude: 22.1, close approach date: 2024-05-01, orbiting body: Earth, miss distance (AU): 0.00067)
+  NEO(name: NEO 2, diameter: 0.2, distance: 110000, speed: 30, absolute magnitude: 21.5, close approach date: 2024-05-02, orbiting body: Earth, miss distance (AU): 0.00068)
+  NEO(name: NEO 3, diameter: 0.15, distance: 105000, speed: 27, absolute magnitude: 22, close approach date: 2024-05-03, orbiting body: Earth, miss distance (AU): 0.00069)
+Cluster 2:
+[       OK ] NasaApiTest.KMeansClusteringGroupsCorrectly (0 ms)
+[----------] 7 tests from NasaApiTest (6 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (6 ms total)
+[  PASSED  ] 7 tests.
+<end of output>
+Test time =   0.36 sec
+----------------------------------------------------------
+Test Passed.
+"test_project" end time: Jun 02 15:53 MSK
+"test_project" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 02 15:53 MSK

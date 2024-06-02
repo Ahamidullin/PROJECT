@@ -24,8 +24,10 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
         curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
         curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+        curl_easy_setopt(curl, CURLOPT_PRIVATE, &readBuffer); // Добавлено для корректной работы с заглушкой
         res = curl_easy_perform(curl);
         curl_easy_cleanup(curl);
+
         if (res != CURLE_OK) {
             std::cerr << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
             return neos;
@@ -47,7 +49,10 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
                         neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"].isDouble() &&
                         neo["close_approach_data"][0]["miss_distance"]["kilometers"].isString() &&
                         neo["close_approach_data"][0]["relative_velocity"]["kilometers_per_second"].isString() &&
-                        neo["absolute_magnitude_h"].isDouble()) {
+                        neo["absolute_magnitude_h"].isDouble() &&
+                        neo["close_approach_data"][0]["close_approach_date"].isString() &&
+                        neo["close_approach_data"][0]["orbiting_body"].isString() &&
+                        neo["close_approach_data"][0]["miss_distance"]["astronomical"].isString()) {
 
                         std::string name = neo["name"].asString();
                         double diameter = neo["estimated_diameter"]["kilometers"]["estimated_diameter_min"].asDouble();
@@ -56,7 +61,13 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
                         double speed = std::stod(
                                 neo["close_approach_data"][0]["relative_velocity"]["kilometers_per_second"].asString());
                         double absolute_magnitude = neo["absolute_magnitude_h"].asDouble();
-                        neos.push_back({name, diameter, distance, speed, absolute_magnitude});
+                        std::string close_approach_date = neo["close_approach_data"][0]["close_approach_date"].asString();
+                        std::string orbiting_body = neo["close_approach_data"][0]["orbiting_body"].asString();
+                        double miss_distance_astronomical = std::stod(
+                                neo["close_approach_data"][0]["miss_distance"]["astronomical"].asString());
+
+                        neos.push_back({name, diameter, distance, speed, absolute_magnitude, close_approach_date,
+                                        orbiting_body, miss_distance_astronomical});
                     } else {
                         std::cerr << "Invalid data types in NEO entry." << std::endl;
                     }
@@ -72,7 +83,8 @@ std::vector<NEO> fetch_neo_data(const std::string &api_key) {
 double euclidean_distance(const NEO &a, const NEO &b) {
     return std::sqrt(std::pow(a.diameter - b.diameter, 2) +
                      std::pow(a.distance - b.distance, 2) +
-                     std::pow(a.speed - b.speed, 2));
+                     std::pow(a.speed - b.speed, 2) +
+                     std::pow(a.absolute_magnitude - b.absolute_magnitude, 2));
 }
 
 void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
@@ -97,13 +109,15 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
             }
             labels[i] = label;
         }
-        std::vector<NEO> new_centroids(k, {"", 0, 0, 0, 0});
+
+        std::vector<NEO> new_centroids(k, {"", 0, 0, 0, 0, "", "", 0});
         std::vector<int> counts(k, 0);
         for (int i = 0; i < n; ++i) {
             int label = labels[i];
             new_centroids[label].diameter += neos[i].diameter;
             new_centroids[label].distance += neos[i].distance;
             new_centroids[label].speed += neos[i].speed;
+            new_centroids[label].absolute_magnitude += neos[i].absolute_magnitude;
             counts[label] += 1;
         }
         for (int j = 0; j < k; ++j) {
@@ -111,6 +125,7 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
                 new_centroids[j].diameter /= counts[j];
                 new_centroids[j].distance /= counts[j];
                 new_centroids[j].speed /= counts[j];
+                new_centroids[j].absolute_magnitude /= counts[j];
             }
         }
         centroids = new_centroids;
@@ -124,7 +139,10 @@ void k_means_clustering(std::vector<NEO> &neos, int k, int iterations) {
                           << ", diameter: " << neos[j].diameter
                           << ", distance: " << neos[j].distance
                           << ", speed: " << neos[j].speed
-                          << ", absolute magnitude: " << neos[j].absolute_magnitude << ")" << std::endl;
+                          << ", absolute magnitude: " << neos[j].absolute_magnitude
+                          << ", close approach date: " << neos[j].close_approach_date
+                          << ", orbiting body: " << neos[j].orbiting_body
+                          << ", miss distance (AU): " << neos[j].miss_distance_astronomical << ")" << std::endl;
             }
         }
     }

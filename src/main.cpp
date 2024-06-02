@@ -7,12 +7,11 @@ int main() {
     std::vector<NEO> neos = fetch_neo_data(api_key);
 
     if (!neos.empty()) {
-        int k = 15;
+        int k = 5;
         int iterations = 200;
         k_means_clustering(neos, k, iterations);
     } else {
         std::cerr << "No NEO data available" << std::endl;
     }
-
     return 0;
 }
