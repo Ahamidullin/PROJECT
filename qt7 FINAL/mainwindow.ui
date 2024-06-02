@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1005</width>
+    <height>699</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLabel#headerLabel {
+    color: white;
+    background-color: #0b3d91;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="styleSheet">
+    <string notr="true">QWidget#centralWidget {
+    background-image: url(:/images/heic0206a.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+</string>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>160</y>
+      <width>801</width>
+      <height>471</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableWidget {
+    background-color: rgba(0, 0, 0, 0.7);  /* Полупрозрачный черный фон */
+    color: white;  /* Белый цвет текста */
+    gridline-color: #ffffff;  /* Белые линии сетки */
+    font-size: 14px;  /* Размер шрифта */
+    border: 2px solid #ffffff;  /* Белая граница */
+    border-radius: 10px;  /* Скругленные углы */
+}
+
+QHeaderView::section {
+    background-color: #001f3f;  /* Темно-синий цвет заголовков */
+    color: white;  /* Белый цвет текста в заголовках */
+    padding: 5px;  /* Внутренний отступ */
+    border: 1px solid #ffffff;  /* Белая граница */
+}
+
+QTableCornerButton::section {
+    background-color: #001f3f;  /* Темно-синий цвет угловой кнопки */
+    border: 1px solid #ffffff;  /* Белая граница */
+}
+
+QTableWidget::item {
+    padding: 5px;  /* Внутренний отступ */
+    border: none;  /* Убрать границы ячеек */
+    background-color: transparent;  /* Прозрачный фон ячеек */
+}
+
+QTableWidget::item:selected {
+    background-color: #0074D9;  /* Цвет выделения */
+    color: #ffffff;  /* Цвет текста при выделении */
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="headerLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>981</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#headerLabel {
+    color: white;  /* Белый цвет текста */
+    background-color: rgba(0, 0, 0, 0.7);  /* Полупрозрачный черный фон */
+    font-size: 24px;  /* Размер шрифта */
+    font-weight: bold;  /* Жирный шрифт */
+    padding: 10px;  /* Внутренний отступ */
+    border: 2px solid #ffffff;  /* Белая граница */
+    border-radius: 10px;  /* Скругленные углы */
+    text-align: center;  /* Центрирование текста */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>NASA Near Earth Objects ‧₊˚ ☁️⋅♡🪐༘⋆</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="clusterIdInput">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>110</y>
+      <width>511</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#clusterIdInput {
+    color: white;  /* Белый цвет текста */
+    background-color: rgba(0, 0, 0, 0.7);  /* Полупрозрачный черный фон */
+    font-size: 14px;  /* Размер шрифта */
+    font-weight: bold;  /* Жирный шрифт */
+    padding: 10px;  /* Внутренний отступ */
+    border: 2px solid #ffffff;  /* Белая граница */
+    border-radius: 10px;  /* Скругленные углы */
+    text-align: center;  /* Центрирование текста */
+}
+</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="searchClusterButton">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>110</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>🔎</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>160</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_5">
+     <item>
+      <widget class="QPushButton" name="fetchDataButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#fetchDataButton {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Fetch Data 🎀</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clusterButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#clusterButton {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+
+</string>
+       </property>
+       <property name="text">
+        <string>Run Clustering 🎀</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="restoreTableButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#restoreTableButton {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Restore Table 🎀</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="clearTableButton">
+       <property name="styleSheet">
+        <string notr="true">QPushButton#clearTableButton {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    text-align: center;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Clear Table 🎀</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>110</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>-1</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#label {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}</string>
+    </property>
+    <property name="text">
+     <string>Search for particular Cluster:</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1005</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

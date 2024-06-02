@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>heic2018b.jpg</file>
+        <file>heic1509a.jpg</file>
+        <file>heic2105a.jpg</file>
+        <file>heic0602a.jpg</file>
+        <file>heic0206a.jpg</file>
+    </qresource>
+</RCC>
